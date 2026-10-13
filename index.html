@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repositorio de actividades · Brecha digital y tecnología en la docencia</title>
+<meta name="description" content="Sitio web inclusivo que reúne las actividades sobre la brecha digital y la tecnología en las prácticas docentes.">
+<meta name="theme-color" content="#00606b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Repositorio de actividades · Brecha digital y docencia">
+<meta property="og:description" content="Sitio web inclusivo con las actividades sobre la brecha digital y la tecnología en las prácticas docentes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300606b'/%3E%3Ccircle cx='42' cy='42' r='12' fill='%23ffb703'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fb;--surf:#fff;--ink:#14213d;--soft:#44506a;--pri:#00606b;--on:#fff;--acc:#ffb703;--line:#c3cbd8}
+[data-tema=oscuro]{--bg:#0e1522;--surf:#162033;--ink:#eef2f8;--soft:#b5c0d3;--pri:#5fd0dc;--on:#06242a;--acc:#ffc933;--line:#35435e}
+[data-tema=contraste]{--bg:#000;--surf:#000;--ink:#fff;--soft:#fff;--pri:#ffee00;--on:#000;--acc:#ffee00;--line:#fff}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:1rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.7 "Atkinson Hyperlegible",Verdana,"Segoe UI",sans-serif}
+body.lex{font-family:Lexend,"Atkinson Hyperlegible",Verdana,sans-serif}
+body.esp{line-height:2.1;letter-spacing:.04em;word-spacing:.16em}
+h1,h2,h3{font-family:Lexend,"Atkinson Hyperlegible",Verdana,sans-serif;line-height:1.25;margin:0 0 .75rem}
+p{max-width:66ch;margin:0 0 1rem}
+a{color:var(--pri);text-underline-offset:.22em;text-decoration-thickness:2px}
+[data-tema=oscuro] a,[data-tema=contraste] a{color:var(--pri)}
+:focus-visible{outline:4px solid var(--acc);outline-offset:3px;box-shadow:0 0 0 7px var(--ink)}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saltar{position:absolute;left:1rem;top:-5rem;background:var(--acc);color:#000;padding:.8rem 1.2rem;font-weight:700;z-index:50;border-radius:.4rem}
+.saltar:focus{top:1rem}
+
+header{border-bottom:1px solid var(--line);background:var(--surf)}
+header .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:center;justify-content:space-between;padding-top:.9rem;padding-bottom:.9rem}
+.marca{font:700 1.1rem Lexend,sans-serif;margin:0}
+nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
+nav a{display:inline-block;padding:.5rem 0;font-weight:700;color:var(--ink)}
+
+.hero{padding:4rem 0 3.5rem;border-bottom:8px solid var(--acc);background:var(--surf)}
+.hero h1{font-size:clamp(2.1rem,6.2vw,3.75rem);font-weight:700;max-width:19ch;margin-bottom:1.25rem}
+.hero .lead{font-size:1.3rem;color:var(--soft);border-left:6px solid var(--acc);padding-left:1rem;max-width:56ch}
+.acciones{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.btn,button{font:700 1rem "Atkinson Hyperlegible",Verdana,sans-serif;min-height:48px;padding:.55rem 1.2rem;border-radius:.45rem;border:2px solid var(--pri);background:var(--surf);color:var(--pri);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.p,button[aria-pressed=true],button.p{background:var(--pri);color:var(--on)}
+[data-tema=contraste] button,[data-tema=contraste] .btn{border-color:#fff}
+.btn:hover,button:hover{filter:brightness(1.12)}
+
+section{padding:3rem 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+h3{font-size:1.2rem}
+
+dl.pour{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));margin:1.5rem 0 0}
+.pour div{background:var(--surf);border:2px solid var(--line);border-top:8px solid var(--pri);border-radius:.4rem;padding:1rem 1.1rem}
+.pour dt{font:700 1.15rem Lexend,sans-serif;margin-bottom:.35rem}
+.pour dd{margin:0;color:var(--soft)}
+
+.filtros{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.25rem 0}
+.rejilla{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+.card{background:var(--surf);border:2px solid var(--line);border-radius:.9rem;padding:1.4rem;display:flex;flex-direction:column}
+.tag{align-self:flex-start;background:var(--acc);color:#000;font-weight:700;font-size:.95rem;padding:.1rem .7rem;border-radius:99px;margin-bottom:.8rem}
+.card p{color:var(--soft)}
+details{margin:.25rem 0 1rem}
+summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+details ul{margin:.25rem 0 0;padding-left:1.2rem}
+.card .btn{margin-top:auto;align-self:flex-start}
+#conteo{color:var(--soft);margin:0 0 1rem}
+
+.scroll{overflow-x:auto;border:2px solid var(--line);border-radius:.5rem;background:var(--surf)}
+table{border-collapse:collapse;width:100%;min-width:44rem}
+caption{text-align:left;font-weight:700;padding:.8rem 1rem}
+th,td{padding:.8rem 1rem;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+th{background:var(--acc);color:#000}
+
+.lista{padding-left:1.2rem;max-width:66ch}
+.lista li{margin-bottom:.7rem}
+figure{margin:1.5rem 0;background:var(--surf);border:2px dashed var(--line);border-radius:.5rem;padding:1rem}
+figcaption{color:var(--soft)}
+
+footer{padding:2.5rem 0 7rem;background:var(--surf)}
+
+#abrir{position:fixed;right:1rem;bottom:1rem;z-index:40;box-shadow:0 4px 14px rgba(0,0,0,.35);background:var(--pri);color:var(--on);padding:.7rem 1.2rem}
+#panel{position:fixed;right:1rem;bottom:5rem;z-index:40;width:min(22rem,calc(100vw - 2rem));max-height:calc(100vh - 7rem);overflow:auto;background:var(--surf);color:var(--ink);border:3px solid var(--pri);border-radius:.9rem;padding:1.1rem;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#panel h2{font-size:1.2rem;margin-bottom:.5rem}
+#panel fieldset{border:0;padding:0;margin:0 0 1rem}
+#panel legend{font-weight:700;margin-bottom:.4rem;padding:0}
+.fila{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.fila button{padding:.4rem .8rem}
+#tam{min-width:4rem;text-align:center;font-weight:700}
+@media print{#abrir,#panel,.saltar{display:none}}
+
+/* ---- Acabado profesional ---- */
+.marca{display:flex;align-items:center;gap:.7rem}
+.marca:before{content:"";width:2.1rem;height:2.1rem;border-radius:.55rem;background:radial-gradient(circle at 70% 70%,var(--acc) 0 24%,transparent 26%),var(--pri)}
+.hero{background:linear-gradient(180deg,var(--surf),var(--bg))}
+.hero .wrap{display:grid;gap:2.5rem;align-items:start}
+@media(min-width:56rem){.hero .wrap{grid-template-columns:1.45fr 1fr}}
+.ficha{background:var(--surf);border:2px solid var(--line);border-top:8px solid var(--pri);border-radius:1rem;padding:1.4rem;box-shadow:0 14px 34px -16px rgba(20,33,61,.35)}
+.ficha h2{font-size:1.15rem}
+.ficha dl{margin:0}
+.ficha dt{font-size:.95rem;color:var(--soft)}
+.ficha dd{margin:0 0 .85rem;font-weight:700}
+.ficha dd:last-child{margin-bottom:0}
+main>section:nth-of-type(even){background:var(--surf)}
+.ruta{list-style:none;margin:1.75rem 0 0;padding:0 0 0 1.25rem;counter-reset:p;max-width:46rem;border-left:4px solid var(--pri)}
+.ruta li{counter-increment:p;position:relative;padding:0 0 1.6rem 1.6rem}
+.ruta li:before{content:counter(p);position:absolute;left:-2.1rem;top:0;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--pri);color:var(--on);font:700 1rem Lexend,sans-serif;display:grid;place-items:center}
+.ruta strong{display:block;font:700 1.15rem Lexend,sans-serif}
+.ruta span{color:var(--soft)}
+.card{transition:border-color .2s}
+.card:hover{border-color:var(--pri)}
+tbody tr:nth-child(even){background:var(--bg)}
+footer{border-top:8px solid var(--acc)}
+.pie{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.pie h2{font-size:1.1rem}
+.pie ul{list-style:none;padding:0;margin:0}
+.pie li a{display:inline-block;padding:.35rem 0}
+.copy{margin-top:2rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.copy p{margin:0}
+@media print{a[href^=http]:after{content:" (" attr(href) ")";font-size:.85em}header nav,footer nav{display:none}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+<header>
+  <div class="wrap">
+    <p class="marca">Brecha digital y docencia</p>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#principios">Principios</a></li>
+        <li><a href="#ruta">Ruta</a></li>
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#evidencia">Evidencia</a></li>
+        <li><a href="#accesibilidad">Accesibilidad</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+      <h1>La tecnología solo enseña si todas las personas pueden entrar</h1>
+      <p class="lead">Este sitio reúne las actividades realizadas para evaluar la brecha digital en la escuela normal y para pensar cómo la tecnología digital transforma las prácticas docentes. Está diseñado para que cualquier estudiante lo pueda leer, escuchar y recorrer.</p>
+      <div class="acciones">
+        <a class="btn p" href="#actividades">Ver actividades</a>
+        <a class="btn" href="#accesibilidad">Cómo se hizo accesible</a>
+      </div>
+      </div>
+      <aside class="ficha" aria-labelledby="t-fic">
+        <h2 id="t-fic">Ficha del proyecto</h2>
+        <!-- EDITA: cambia estos datos por los tuyos -->
+        <dl>
+          <dt>Unidad de aprendizaje</dt><dd>II. La tecnología digital y las prácticas docentes</dd>
+          <dt>Periodo de trabajo</dt><dd>28 de septiembre al 2 de octubre</dd>
+          <dt>Producto</dt><dd>Sitio web inclusivo y repositorio de actividades</dd>
+          <dt>Meta de accesibilidad</dt><dd>WCAG 2.2, nivel AA</dd>
+          <dt>Elaborado por</dt><dd>Tu nombre, escuela normal</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <section id="principios" aria-labelledby="t-pri">
+    <div class="wrap">
+      <h2 id="t-pri">Cuatro ideas que guían el diseño</h2>
+      <p>Una página inclusiva cumple los principios de las pautas WCAG del W3C. Así se aplican aquí:</p>
+      <dl class="pour">
+        <div><dt>Perceptible</dt><dd>Contraste alto, texto ajustable, descripciones en imágenes y subtítulos en videos.</dd></div>
+        <div><dt>Operable</dt><dd>Todo funciona con teclado, con foco visible y botones grandes.</dd></div>
+        <div><dt>Comprensible</dt><dd>Lenguaje claro, títulos ordenados y navegación igual en toda la página.</dd></div>
+        <div><dt>Robusto</dt><dd>HTML semántico que funciona con lectores de pantalla y en cualquier dispositivo.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="ruta" aria-labelledby="t-rut">
+    <div class="wrap">
+      <h2 id="t-rut">Ruta de trabajo</h2>
+      <p>Así se construyó este sitio durante la unidad. Es un proceso en orden, de la investigación a la publicación.</p>
+      <ol class="ruta">
+        <li><strong>Investigar</strong><span>Busqué videos y sitios sobre diseño web inclusivo y registré lo aprendido en la tabla de evidencia.</span></li>
+        <li><strong>Diseñar</strong><span>Definí la estructura, la paleta de colores con buen contraste y las tipografías de lectura fácil.</span></li>
+        <li><strong>Construir</strong><span>Programé el sitio con HTML semántico, CSS y un panel de ajustes de accesibilidad.</span></li>
+        <li><strong>Revisar y publicar</strong><span>Probé con teclado, WAVE y el verificador de contraste, y lo publiqué como repositorio de actividades.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="actividades" aria-labelledby="t-act">
+    <div class="wrap">
+      <h2 id="t-act">Repositorio de actividades</h2>
+      <p>Cada actividad se guarda aquí con su descripción y su archivo. <!-- EDITA: cambia títulos, textos y enlaces por los tuyos -->Filtra por unidad para encontrar lo que buscas.</p>
+
+      <div class="filtros" role="group" aria-label="Filtrar por unidad">
+        <button type="button" class="filtro" data-f="todas" aria-pressed="true">Todas</button>
+        <button type="button" class="filtro" data-f="1" aria-pressed="false">Unidad I</button>
+        <button type="button" class="filtro" data-f="2" aria-pressed="false">Unidad II</button>
+      </div>
+      <p id="conteo" role="status" aria-live="polite"></p>
+
+      <div class="rejilla">
+        <article class="card" data-u="1">
+          <span class="tag">Unidad I</span>
+          <h3>Diagnóstico de la brecha digital</h3>
+          <p>Panorama del acceso a dispositivos, internet y habilidades digitales en la escuela normal.</p>
+          <details><summary>Qué incluye</summary><ul><li>Objetivo y justificación</li><li>Marco teórico breve</li><li>Conclusiones</li></ul></details>
+          <a class="btn" href="archivos/actividad-1.pdf">Abrir PDF<span class="sr"> del diagnóstico de la brecha digital</span></a>
+        </article>
+
+        <article class="card" data-u="1">
+          <span class="tag">Unidad I</span>
+          <h3>Instrumento para recolectar datos</h3>
+          <p>Cuestionario aplicado al estudiantado para conocer su acceso y uso de la tecnología.</p>
+          <details><summary>Qué incluye</summary><ul><li>Preguntas del cuestionario</li><li>Población y muestra</li><li>Forma de aplicación</li></ul></details>
+          <a class="btn" href="archivos/actividad-2.pdf">Abrir PDF<span class="sr"> del instrumento de recolección de datos</span></a>
+        </article>
+
+        <article class="card" data-u="1">
+          <span class="tag">Unidad I</span>
+          <h3>Análisis de resultados</h3>
+          <p>Gráficas e interpretación de los datos obtenidos sobre el estado de la brecha digital.</p>
+          <details><summary>Qué incluye</summary><ul><li>Tablas y gráficas</li><li>Hallazgos principales</li><li>Propuestas de mejora</li></ul></details>
+          <a class="btn" href="archivos/actividad-3.pdf">Abrir PDF<span class="sr"> del análisis de resultados</span></a>
+        </article>
+
+        <article class="card" data-u="2">
+          <span class="tag">Unidad II</span>
+          <h3>Tecnología digital en las prácticas docentes</h3>
+          <p>Reflexión sobre cómo usar recursos digitales con intención pedagógica y sin excluir a nadie.</p>
+          <details><summary>Qué incluye</summary><ul><li>Recursos digitales analizados</li><li>Ejemplos para el aula</li><li>Reflexión personal</li></ul></details>
+          <a class="btn" href="archivos/actividad-4.pdf">Abrir PDF<span class="sr"> sobre tecnología digital en las prácticas docentes</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidencia" aria-labelledby="t-evi">
+    <div class="wrap">
+      <h2 id="t-evi">Evidencia de investigación</h2>
+      <p>Videos y sitios que consulté para diseñar este espacio con enfoque inclusivo y qué aproveché de cada uno.</p>
+      <div class="scroll" tabindex="0" role="region" aria-labelledby="cap">
+        <table>
+          <caption id="cap">Fuentes consultadas</caption>
+          <thead><tr><th scope="col">Fuente</th><th scope="col">Tipo</th><th scope="col">Qué aprendí</th><th scope="col">Cómo lo apliqué</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" style="background:none;color:inherit"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/es">Pautas WCAG (W3C)</a></th><td>Sitio web</td><td>Los principios perceptible, operable, comprensible y robusto.</td><td>Estructura y secciones de esta página.</td></tr>
+            <tr><th scope="row" style="background:none;color:inherit"><a href="https://webaim.org/resources/contrastchecker/">Verificador de contraste (WebAIM)</a></th><td>Herramienta</td><td>El texto necesita al menos 4.5:1 de contraste.</td><td>Paleta de colores y modo de alto contraste.</td></tr>
+            <tr><th scope="row" style="background:none;color:inherit"><a href="https://developer.mozilla.org/es/docs/Web/Accessibility">Accesibilidad web (MDN)</a></th><td>Sitio web</td><td>Uso correcto de HTML semántico y atributos ARIA.</td><td>Landmarks, títulos y botones con estado.</td></tr>
+            <tr><th scope="row" style="background:none;color:inherit"><a href="https://wave.webaim.org/">WAVE</a></th><td>Herramienta</td><td>Cómo detectar errores de accesibilidad en una página.</td><td>Revisión final del sitio.</td></tr>
+            <tr><th scope="row" style="background:none;color:inherit">Agrega aquí el título y enlace de un video</th><td>Video</td><td>Escribe la idea principal.</td><td>Escribe qué cambiaste gracias a él.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="accesibilidad" aria-labelledby="t-acc">
+    <div class="wrap">
+      <h2 id="t-acc">Cómo se hizo accesible este sitio</h2>
+      <ul class="lista">
+        <li><strong>Panel de accesibilidad:</strong> el botón fijo abajo a la derecha cambia el tamaño del texto, el tema (claro, oscuro o alto contraste), el espaciado y la tipografía de lectura fácil. Tus ajustes se guardan.</li>
+        <li><strong>Lectura en voz alta:</strong> el mismo panel puede leer la página completa.</li>
+        <li><strong>Teclado:</strong> usa Tab para avanzar, Enter para activar y Esc para cerrar el panel.</li>
+        <li><strong>Tipografías:</strong> Atkinson Hyperlegible, creada para personas con baja visión, y Lexend, pensada para mejorar la fluidez al leer.</li>
+        <li><strong>Multimedia:</strong> todo video lleva subtítulos y transcripción; toda imagen, texto alternativo.</li>
+      </ul>
+      <figure>
+        <!-- IMAGEN: <img src="imagenes/foto.jpg" alt="Describe lo que se ve y por qué importa" width="640"> -->
+        <!-- VIDEO: <video controls width="640"><source src="videos/video.mp4" type="video/mp4"><track kind="subtitles" srclang="es" label="Español" src="videos/subtitulos.vtt" default></video> -->
+        <figcaption>Espacio para tu imagen o video. Descomenta el código del archivo y cambia las rutas.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap pie">
+    <div>
+      <h2>Declaración de accesibilidad</h2>
+      <!-- Confirma que realmente hiciste estas revisiones antes de entregar -->
+      <p>Este sitio busca cumplir el nivel AA de las pautas WCAG 2.2. Se revisó con WAVE, el verificador de contraste de WebAIM y navegación solo con teclado.</p>
+    </div>
+    <nav aria-label="Pie de página">
+      <h2>Secciones</h2>
+      <ul>
+        <li><a href="#principios">Principios</a></li>
+        <li><a href="#ruta">Ruta de trabajo</a></li>
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#evidencia">Evidencia</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Contacto</h2>
+      <p>¿Encontraste una barrera de accesibilidad? Escríbeme a <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a> y la corrijo.</p>
+    </div>
+  </div>
+  <div class="wrap copy">
+    <p>Tu nombre · Escuela normal · Octubre 2026 · <a href="#contenido">Volver arriba</a></p>
+  </div>
+</footer>
+
+<button type="button" id="abrir" aria-expanded="false" aria-controls="panel">Accesibilidad</button>
+<div id="panel" role="dialog" aria-labelledby="t-panel" hidden>
+  <h2 id="t-panel">Ajusta la lectura</h2>
+  <fieldset>
+    <legend>Tamaño del texto</legend>
+    <div class="fila">
+      <button type="button" id="menos" aria-label="Reducir texto">A−</button>
+      <span id="tam" aria-live="polite">100%</span>
+      <button type="button" id="mas" aria-label="Aumentar texto">A+</button>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Tema de color</legend>
+    <div class="fila">
+      <button type="button" data-tema-btn="claro" aria-pressed="false">Claro</button>
+      <button type="button" data-tema-btn="oscuro" aria-pressed="false">Oscuro</button>
+      <button type="button" data-tema-btn="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Lectura</legend>
+    <div class="fila">
+      <button type="button" id="esp" aria-pressed="false">Espaciado amplio</button>
+      <button type="button" id="lex" aria-pressed="false">Letra de lectura fácil</button>
+      <button type="button" id="voz" aria-pressed="false">Escuchar la página</button>
+    </div>
+  </fieldset>
+  <button type="button" id="reset" class="p">Restablecer todo</button>
+</div>
+
+<script>
+(function(){
+  var d=document,r=d.documentElement,K='acc-sitio',$=function(i){return d.getElementById(i)};
+  var def={s:100,t:'claro',e:false,f:false},st=Object.assign({},def),g=null;
+  try{g=JSON.parse(localStorage.getItem(K))}catch(e){}
+  if(g){Object.assign(st,g)}else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){st.t='oscuro'}
+  function aplicar(){
+    r.style.fontSize=st.s+'%';r.setAttribute('data-tema',st.t);
+    d.body.classList.toggle('esp',st.e);d.body.classList.toggle('lex',st.f);
+    d.querySelectorAll('[data-tema-btn]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-tema-btn')===st.t))});
+    $('esp').setAttribute('aria-pressed',String(st.e));$('lex').setAttribute('aria-pressed',String(st.f));
+    $('tam').textContent=st.s+'%';
+    try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}
+  }
+  aplicar();
+  $('mas').onclick=function(){st.s=Math.min(150,st.s+10);aplicar()};
+  $('menos').onclick=function(){st.s=Math.max(80,st.s-10);aplicar()};
+  d.querySelectorAll('[data-tema-btn]').forEach(function(b){b.onclick=function(){st.t=b.getAttribute('data-tema-btn');aplicar()}});
+  $('esp').onclick=function(){st.e=!st.e;aplicar()};
+  $('lex').onclick=function(){st.f=!st.f;aplicar()};
+
+  var ab=$('abrir'),pn=$('panel');
+  function panel(on){pn.hidden=!on;ab.setAttribute('aria-expanded',String(on));if(on){$('t-panel').setAttribute('tabindex','-1');$('t-panel').focus()}else{ab.focus()}}
+  ab.onclick=function(){panel(pn.hidden)};
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pn.hidden)panel(false)});
+
+  var voz=$('voz');
+  function parar(){speechSynthesis.cancel();voz.setAttribute('aria-pressed','false');voz.textContent='Escuchar la página'}
+  if(!('speechSynthesis' in window)){voz.hidden=true}
+  voz.onclick=function(){
+    if(voz.getAttribute('aria-pressed')==='true'){parar();return}
+    var u=new SpeechSynthesisUtterance($('contenido').innerText);u.lang='es-MX';u.onend=parar;
+    speechSynthesis.speak(u);voz.setAttribute('aria-pressed','true');voz.textContent='Detener lectura';
+  };
+  window.addEventListener('beforeunload',function(){if('speechSynthesis' in window)speechSynthesis.cancel()});
+
+  $('reset').onclick=function(){if('speechSynthesis' in window)parar();st=Object.assign({},def);aplicar()};
+
+  var cards=d.querySelectorAll('.card'),fs=d.querySelectorAll('.filtro');
+  function filtrar(f){
+    var n=0;cards.forEach(function(c){var ok=f==='todas'||c.getAttribute('data-u')===f;c.hidden=!ok;if(ok)n++});
+    fs.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-f')===f))});
+    $('conteo').textContent='Mostrando '+n+(n===1?' actividad.':' actividades.');
+  }
+  fs.forEach(function(b){b.onclick=function(){filtrar(b.getAttribute('data-f'))}});
+  filtrar('todas');
+})();
+</script>
+</body>
+</html>
